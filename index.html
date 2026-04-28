@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Gatherer – Talent Acquisition & Recruitment Consulting | South Africa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 
+         * DESIGN SYSTEM & VARIABLES
+         * Blueprint Colors: Final
+         * Font: Inter (Modern, Clean, High Readability)
+         */
+        :root {
+            --primary-dark: #0B2545;
+            --primary-light: #13315C;
+            --accent: #FFC43D;
+            --text-dark: #132238;
+            --text-light: #64748B;
+            --bg-light: #F8FAFC;
+            --bg-white: #FFFFFF;
+            
+            --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-card-hover: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.06);
+            --shadow-button: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-button-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            
+            --container-width: 1200px;
+            --section-padding: 100px; /* Increased for Premium Feel */
+        }
+
+        /* RESET & BASE */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.7; /* Increased line height for readability */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* TYPOGRAPHY SCALE (Decisive Hierarchy) */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary-dark);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.01em; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.25rem; font-weight: 700; }
+        
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .text-accent { color: var(--accent); }
+        .text-white { color: var(--bg-white); }
+
+        /* UTILITIES */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: var(--section-padding) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .badge-light {
+            background-color: rgba(11, 37, 69, 0.05);
+            color: var(--primary-dark);
+        }
+
+        .badge-accent {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-button);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-button-hover);
+            background-color: #e0ac32; /* Slightly darker gold on hover */
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--bg-white);
+            color: var(--bg-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-white);
+            color: var(--primary-dark);
+        }
+
+        .btn-dark {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            box-shadow: var(--shadow-button);
+        }
+
+        .btn-dark:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-button-hover);
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 16px 0;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-phone {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .header-phone { display: block; }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+
+        /* HERO */
+        .hero {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            padding-top: 140px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(19, 49, 92, 0.4) 0%, rgba(11, 37, 69, 0) 100%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 64px;
+            }
+        }
+
+        .hero-content h1 {
+            color: var(--bg-white);
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            object-fit: cover;
+            aspect-ratio: 4/5;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--bg-white);
+            padding: 16px 24px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-card);
+            color: var(--primary-dark);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* TRUSTED BY */
+        .trusted-by {
+            background-color: var(--bg-light);
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .trusted-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 48px;
+            opacity: 0.6;
+            filter: grayscale(100%);
+        }
+
+        .trusted-logos img {
+            height: 32px;
+            width: auto;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .author-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .author-info span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* WHY CHOOSE US */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        .cta-banner {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            margin-top: 64px;
+        }
+
+        .cta-banner p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0;
+        }
+
+        /* PLACEMENTS */
+        .placements {
+            background-color: var(--bg-light);
+        }
+
+        .placements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .placement-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease;
+        }
+
+        .placement-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .placement-image {
+            height: 160px;
+            background-color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .placement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .placement-card:hover .placement-image img {
+            opacity: 1;
+        }
+
+        .placement-image h3 {
+            color: var(--accent);
+            position: absolute;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .placement-content {
+            padding: 24px;
+        }
+
+        .placement-content h4 {
+            color: var(--primary-dark); /* Fixed Contrast */
+            margin-bottom: 4px;
+        }
+
+        .placement-category {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .placement-content p {
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .placement-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .placement-link:hover {
+            color: var(--accent);
+        }
+
+        .ticker-wrapper {
+            margin-top: 48px;
+            overflow: hidden;
+            white-space: nowrap;
+            background: var(--primary-dark);
+            padding: 16px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+
+        .ticker span {
+            display: inline-block;
+            padding: 0 24px;
+            color: var(--bg-white);
+            font-weight: 600;
+        }
+
+        .ticker span::after {
+            content: '•';
+            margin-left: 24px;
+            color: var(--accent);
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* PROCESS */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 24px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary-dark);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin: 0 auto 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .process-step h3 {
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+        }
+
+        .service-card ul {
+            margin-bottom: 20px;
+        }
+
+        .service-card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            padding: 0 16px;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .stat-card p {
+            font-size: 0.75rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* INSIGHTS */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .insight-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .insight-image {
+            height: 180px;
+            background-color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .insight-image h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .insight-content {
+            padding: 24px;
+        }
+
+        .insight-content h4 {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        /* REACH */
+        .reach {
+            background-color: var(--bg-light);
+        }
+
+        .map-container {
+            background-color: #e2e8f0;
+            height: 400px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 48px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .location-item {
+            background: var(--bg-white);
+            padding: 16px 24px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .location-icon {
+            color: var(--accent);
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            padding: 80px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+
+        .footer-col h4 {
+            color: var(--bg-white);
+            margin-bottom: 24px;
+            font-size: 1.125rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--bg-white);
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-actions { flex-direction: column; }
+            .btn { width: 100%; }
+            .stats-grid { grid-template-columns: 1fr; margin-top: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="https://ik.imagekit.io/puuz06/ce80993f-ec2e-4fa7-81be-f295b2b47b6d.jpg" alt="Hunter Gatherer Logo">
+                HunterGatherer
+            </a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#placements">Placements</a>
+                <a href="#process">Process</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+27000000000" class="header-phone">+27 (0)00 000 0000</a>
+                <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <span class="badge badge-accent">Trusted Since 2012</span>
+                <h1>Connecting <span>Top Talent</span> with Industry-Leading Organisations</h1>
+                <p>Your strategic partner in talent acquisition and management — delivering personalised, client-focused recruitment solutions across South Africa's most demanding sectors.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Schedule Your Confidential Consultation</a>
+                    <a href="#placements" class="btn btn-outline">View Our Placements</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <!-- REPLACED PLACEHOLDER WITH REQUESTED IMAGE -->
+                <img src="https://ik.imagekit.io/puuz06/d4998971-feaa-4571-b211-3abe29c8a479.jpg?updatedAt=1775535635968" alt="Karin & Amanda Hunter Gatherer Directors">
+                <div class="hero-badge">
+                    ★ 4.9 / 5.0 — Google Reviews
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="trusted-by">
+        <div class="container">
+            <div class="trusted-logos">
+                <img src="https://placehold.co/120x28/e8e8e8/999?text=SABPP" alt="SABPP">
+                <img src="https://placehold.co/110x28/e8e8e8/999?text=APSCo" alt="APSCo">
+                <img src="https://placehold.co/100x28/e8e8e8/999?text=SAHospitality" alt="SAHospitality">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">What Our Clients Say</span>
+                <h2>Trusted by HR leaders and business owners across South Africa.</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Hunter Gatherer placed our Head of Operations in under 3 weeks. The cultural fit was perfect — they truly understood our business needs."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>HR Director</h4>
+                            <span>Cape Town</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Exceptional service. They sourced a rare skill-set for our security division that we'd been hunting for months. Highly recommended."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <h4>Managing Director</h4>
+                            <span>Johannesburg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Their boutique approach made all the difference. Karin and Amanda personally oversaw every stage — we felt like their only client."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TL</div>
+                        <div class="author-info">
+                            <h4>CEO</h4>
+                            <span>Durban</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#testimonials" class="placement-link">See All 50+ Client Success Stories →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">Why Choose Us</span>
+                <h2>Boutique Consultancy with Big Results</h2>
+                <p>Our core values and deep industry expertise set us apart in the South African recruitment landscape.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"></div>
+                    <h3>Accountability</h3>
+                    <p>We take full ownership of every placement, ensuring transparent communication and measurable results.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Excellence</h3>
+                    <p>Rigorous screening and assessment deliver only the highest-calibre candidates for your organisation.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Integrity</h3>
+                    <p>Ethical, confidential, and honest — the foundation of every relationship we build with clients and candidates.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Client-Focused Strategy</h3>
+                    <p>Tailored recruitment solutions aligned to your specific organisational culture and business goals.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Deep Industry Knowledge</h3>
+                    <p>Specialist expertise across hospitality, security, logistics, and professional services sectors.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📋</div>
+                    <h3>B-BBEE Compliant</h3>
+                    <p>Fully compliant with South Africa's Broad-Based Black Economic Empowerment framework.</p>
+                </div>
+            </div>
+            <div class="cta-banner fade-in">
+                <p>🏆 Boutique Consultancy — Personalised Service, Enterprise Results</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placements -->
+    <section id="placements" class="section placements">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">Proven Track Record</span>
+                <h2>Successful Placements. Proven Results.</h2>
+                <p>A snapshot of the diverse roles we've successfully placed across South Africa.</p>
+            </div>
+            <div class="placements-grid">
+                <div class="placement-card fade-in">
+                    <div class="placement-image">
+                        <img src="https://placehold.co/400x160/0B2545/FFC43D?text=HR+Management" alt="HR Management">
+                        
+                    </div>
+                    <div class="placement-content">
+                        <h4>Human Resource Manager</h4>
+                        <span class="placement-category">Hospitality</span>
+                        <p>Placed within 2 weeks — retained for 18+ months.</p>
+                        <a href="#placements" class="placement-link">View Similar Roles →</a>
+                    </div>
+                </div>
+                <div class="placement-card fade-in">
+                    <div class="placement-image">
+                        <img src="https://placehold.co/400x160/0B2545/FFC43D?text=Legal" alt="Legal">
+                        
+                    </div>
+                    <div class="placement-content">
+                        <h4>Corporate Lawyer</h4>
+                        <span class="placement-category">Professional Services</span>
+                        <p>Placed within 3 weeks — exceptional long-term fit.</p>
+                        <a href="#placements" class="placement-link">View Similar Roles →</a>
+                    </div>
+                </div>
+                <div class="placement-card fade-in">
+                    <div class="placement-image">
+                        <img src="https://placehold.co/400x160/0B2545/FFC43D?text=Estate+Management" alt="Estate Management">
+                        
+                    </div>
+                    <div class="placement-content">
+                        <h4>Estate Manager</h4>
+                        <span class="placement-category">Private Estates</span>
+                        <p>Placed within 10 days — ongoing support provided.</p>
+                        <a href="#placements" class="placement-link">View Similar Roles →</a>
+                    </div>
+                </div>
+                <div class="placement-card fade-in">
+                    <div class="placement-image">
+                        <img src="https://placehold.co/400x160/0B2545/FFC43D?text=Logistics" alt="Logistics">
+                        
+                    </div>
+                    <div class="placement-content">
+                        <h4>Warehouse Manager</h4>
+                        <span class="placement-category">Logistics & Supply Chain</span>
+                        <p>Placed within 2 weeks — operational efficiency improved.</p>
+                        <a href="#placements" class="placement-link">View Similar Roles →</a>
+                    </div>
+                </div>
+                <div class="placement-card fade-in">
+                    <div class="placement-image">
+                        <img src="https://placehold.co/400x160/0B2545/FFC43D?text=Hospitality" alt="Hospitality">
+                        
+                    </div>
+                    <div class="placement-content">
+                        <h4>Executive Chef</h4>
+                        <span class="placement-category">Hospitality</span>
+                        <p>Placed within 1 week — acclaimed by guests and management.</p>
+                        <a href="#placements" class="placement-link">View Similar Roles →</a>
+                    </div>
+                </div>
+                <div class="placement-card fade-in">
+                    <div class="placement-image">
+                        <img src="https://placehold.co/400x160/0B2545/FFC43D?text=Security" alt="Security">
+                        
+                    </div>
+                    <div class="placement-content">
+                        <h4>Fleet Manager</h4>
+                        <span class="placement-category">Security & Logistics</span>
+                        <p>Placed within 3 weeks — excellent operational track record.</p>
+                        <a href="#placements" class="placement-link">View Similar Roles →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ticker-wrapper fade-in">
+                <div class="ticker">
+                    <span>Lawyer</span>
+                    <span>Housekeepers</span>
+                    <span>Butlers</span>
+                    <span>Warehouse Managers</span>
+                    <span>Fleet Managers</span>
+                    <span>Nail Technicians</span>
+                    <span>Estate Managers</span>
+                    <span>Chefs</span>
+                    <span>Au-Pair</span>
+                    <span>Human Resource Managers</span>
+                    <span>Security Officers</span>
+                    <span>Admin Staff</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span>Lawyer</span>
+                    <span>Housekeepers</span>
+                    <span>Butlers</span>
+                    <span>Warehouse Managers</span>
+                    <span>Fleet Managers</span>
+                    <span>Nail Technicians</span>
+                    <span>Estate Managers</span>
+                    <span>Chefs</span>
+                    <span>Au-Pair</span>
+                    <span>Human Resource Managers</span>
+                    <span>Security Officers</span>
+                    <span>Admin Staff</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">How We Work</span>
+                <h2>Working With Us Is Easy — 4 Simple Steps</h2>
+                <p>A transparent, systematic approach that delivers the right talent, every time.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Discovery Call</h3>
+                    <p>We take the time to understand your unique needs, culture, and the specific requirements of the role.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Sourcing & Screening</h3>
+                    <p>We tap into our extensive network and rigorously screen candidates for skills, experience, and cultural fit.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Candidate Shortlist</h3>
+                    <p>We present 3–5 top matches with detailed profiles, saving you valuable time and effort.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Placement & Follow-Up</h3>
+                    <p>We support onboarding and conduct follow-ups to ensure long-term retention and satisfaction.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#contact" class="btn btn-primary">Start Your Search Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">What We Offer</span>
+                <h2>Talent Solutions for Forward-Thinking Organisations</h2>
+                <p>Comprehensive recruitment and talent management services tailored to your business.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔎</div>
+                    <h3>Executive Search</h3>
+                    <ul>
+                        <li>Confidential senior-level placements</li>
+                        <li>Extensive network of top executives</li>
+                        <li>Rigorous vetting and assessment</li>
+                    </ul>
+                    <a href="#services" class="placement-link">Learn More →</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>Proactive Candidate Procurement</h3>
+                    <ul>
+                        <li>Pipeline building for critical roles</li>
+                        <li>Market mapping and talent pooling</li>
+                        <li>Ready when you need to hire</li>
+                    </ul>
+                    <a href="#services" class="placement-link">Learn More →</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">💼</div>
+                    <h3>Talent Management Consulting</h3>
+                    <ul>
+                        <li>Retention strategy development</li>
+                        <li>Succession planning</li>
+                        <li>Workforce optimisation</li>
+                    </ul>
+                    <a href="#services" class="placement-link">Learn More →</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏢</div>
+                    <h3>HR Outsourcing</h3>
+                    <ul>
+                        <li>End-to-end HR function support</li>
+                        <li>Compliance and policy management</li>
+                        <li>Scalable solutions for SMEs</li>
+                    </ul>
+                    <a href="#services" class="placement-link">Learn More →</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📄</div>
+                    <h3>Contract Staffing</h3>
+                    <ul>
+                        <li>Flexible temporary placements</li>
+                        <li>Project-based staffing</li>
+                        <li>Quick turnaround times</li>
+                    </ul>
+                    <a href="#services" class="placement-link">Learn More →</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📊</div>
+                    <h3>Assessment & Profiling</h3>
+                    <ul>
+                        <li>Psychometric assessments</li>
+                        <li>Competency-based evaluations</li>
+                        <li>Detailed candidate profiles</li>
+                    </ul>
+                    <a href="#services" class="placement-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="cta-banner fade-in" style="background-color: var(--accent); color: var(--primary-dark);">
+                <p style="color: var(--primary-dark);">✨ Customised Solutions — No One-Size-Fits-All Approach</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <span class="badge badge-light">About Hunter Gatherer</span>
+                    <h2>Boutique Talent Acquisition Specialists Serving South Africa</h2>
+                    <p><em>Discover the difference.</em></p>
+                    <p>Hunter Gatherer is a boutique talent acquisition and recruitment consultancy built on a shared passion for connecting exceptional people with outstanding organisations. Founded by Karin Van Antwerp and Amanda Peens, we bring decades of combined experience across South Africa's most dynamic sectors — from hospitality and security to logistics and professional services.</p>
+                    <p>We believe recruitment is fundamentally a relationship business. That's why every engagement is led by one of our directors personally. Our deep understanding of the local business environment, combined with a rigorous, values-driven approach, ensures we deliver not just candidates — but lasting, transformative hires.</p>
+                    <p style="color: var(--primary-dark); font-weight: 600;">Where individuals discover opportunities and businesses reach excellence.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <!-- REPLACED PLACEHOLDER WITH REQUESTED IMAGE -->
+                    <img src="https://ik.imagekit.io/puuz06/d4998971-feaa-4571-b211-3abe29c8a479.jpg?updatedAt=1775535635968" alt="Karin & Amanda Hunter Gatherer Team">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>12+</h3>
+                            <p>Years in Business</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>1,500+</h3>
+                            <p>Placements Made</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>94%</h3>
+                            <p>Client Retention</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="blog" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">Insights</span>
+                <h2>Insights for Talent Leaders</h2>
+                <p>Expert perspectives on hiring trends, retention strategies, and the South African talent landscape.</p>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card fade-in">
+                    <div class="insight-image">
+                        <img src="https://placehold.co/400x180/0B2545/FFC43D?text=Hiring+Trends" alt="Hiring Trends">
+                    </div>
+                    <div class="insight-content">
+                        <h4>Top 5 Hiring Trends in South Africa's Hospitality Sector</h4>
+                        <p>Explore the key shifts shaping hospitality recruitment in 2025 and how to stay ahead of the competition.</p>
+                        <a href="#blog" class="placement-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="insight-card fade-in">
+                    <div class="insight-image">
+                        <img src="https://placehold.co/400x180/0B2545/FFC43D?text=Retention" alt="Retention">
+                    </div>
+                    <div class="insight-content">
+                        <h4>How to Retain Top Executive Talent in a Competitive Market</h4>
+                        <p>Practical retention strategies that keep your best leaders engaged and committed for the long term.</p>
+                        <a href="#blog" class="placement-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="insight-card fade-in">
+                    <div class="insight-image">
+                        <img src="https://placehold.co/400x180/0B2545/FFC43D?text=Labour+Law" alt="Labour Law">
+                    </div>
+                    <div class="insight-content">
+                        <h4>Navigating South African Labour Law: A Guide for Employers</h4>
+                        <p>Stay compliant and protect your business with this essential overview of key labour regulations.</p>
+                        <a href="#blog" class="placement-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#blog" class="btn btn-dark">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reach -->
+    <section class="section reach">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge badge-light">Our Reach</span>
+                <h2>Proudly Serving South Africa & Beyond</h2>
+                <p>Nationwide coverage with deep roots in South Africa's key business hubs. Virtual consultations available.</p>
+            </div>
+            <div class="map-container fade-in">
+                <img src="https://placehold.co/1200x400/e8e8e8/666?text=Google+Map+%E2%80%93+Johannesburg+%7C+Cape+Town+%7C+Durban" alt="Map">
+            </div>
+            <div class="locations-grid fade-in">
+                <div class="location-item"><span class="location-icon">📍</span> Johannesburg — Gauteng</div>
+                <div class="location-item"><span class="location-icon">📍</span> Cape Town — Western Cape</div>
+                <div class="location-item"><span class="location-icon">📍</span> Durban — KwaZulu-Natal</div>
+                <div class="location-item"><span class="location-icon"></span> Pretoria — Gauteng</div>
+                <div class="location-item"><span class="location-icon">📍</span> Port Elizabeth — Eastern Cape</div>
+                <div class="location-item"><span class="location-icon">📍</span> Bloemfontein — Free State</div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <p>Not in our list? <a href="#contact" style="color: var(--primary-dark); font-weight: 600;">Contact us</a> — we serve clients nationwide.</p>
+                <span class="badge badge-light" style="margin-top: 16px;">💻 Virtual Consultations Available</span>
+                <p style="font-size: 0.85rem; margin-top: 8px;">We come to you — nationwide and remote.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 24px;">
+                        <img src="https://ik.imagekit.io/puuz06/ce80993f-ec2e-4fa7-81be-f295b2b47b6d.jpg" alt="Hunter Gatherer Logo">
+                        HunterGatherer
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Where individuals discover opportunities and businesses reach excellence.</p>
+                    <div class="footer-contact" style="margin-top: 24px;">
+                        <p>📞 +27 (0)00 000 0000</p>
+                        <p>✉️ info@huntergatherer.co.za</p>
+                        <p> Johannesburg, Gauteng, South Africa</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Executive Search</a></li>
+                        <li><a href="#services">Candidate Procurement</a></li>
+                        <li><a href="#services">Talent Consulting</a></li>
+                        <li><a href="#services">HR Outsourcing</a></li>
+                        <li><a href="#services">Contract Staffing</a></li>
+                        <li><a href="#services">Assessment & Profiling</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#about">Team</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#placements">Placements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Placements</h4>
+                    <ul>
+                        <li><a href="#placements">Hospitality</a></li>
+                        <li><a href="#placements">Security</a></li>
+                        <li><a href="#placements">Logistics</a></li>
+                        <li><a href="#placements">Professional Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Insights</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#blog">Hiring Guides</a></li>
+                        <li><a href="#blog">Industry Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Hunter Gatherer Consulting. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">B-BBEE Compliant</a>
+                </div>
+                <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Schedule a Consultation</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for Fade-in Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
